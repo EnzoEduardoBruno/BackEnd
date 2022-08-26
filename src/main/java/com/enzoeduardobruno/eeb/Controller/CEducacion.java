@@ -7,7 +7,7 @@ package com.enzoeduardobruno.eeb.Controller;
 import com.enzoeduardobruno.eeb.Dto.dtoEducacion;
 import com.enzoeduardobruno.eeb.Entity.Educacion;
 import com.enzoeduardobruno.eeb.Security.Controller.Mensaje;
-import com.enzoeduardobruno.eeb.Service.Seducacion;
+import com.enzoeduardobruno.eeb.Service.SEducacion;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:4200")
 public class CEducacion {
     @Autowired
-    Seducacion sEducacion;
+    SEducacion sEducacion;
     
     @GetMapping("/lista")
     public ResponseEntity<List<Educacion>> list(){
