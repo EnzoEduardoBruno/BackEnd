@@ -21,30 +21,30 @@ public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
     @GetMapping("personas/traer")
-    public List<Persona> getPersona (){
-        return ipersonaService.GetPersona();
+    public List<Persona> getPersona(){
+        return ipersonaService.getPersona();
     }
     
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/personas/crear")
-    public String createPersona(@RequestBody Persona persona) {
+    public String createPersona(@RequestBody Persona persona){
         ipersonaService.savePersona(persona);
         return "La persona fue creada correctamente";
     }
     
-        @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/personas/borrar/(id)")
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/personas/borrar/{id}")
     public String deletePersona(@PathVariable Long id){
         ipersonaService.deletePersona(id);
         return "La persona fue eliminada correctamente";
     }
     
-        @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/personas/editar/(id)")
-    public Persona editPersona(@PathVariable Long id, 
-            @RequestParam("nombre") String nuevoNombre, 
-            @RequestParam("apellido") String nuevoApellido,
-            @RequestParam("img") String nuevoImg){
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/personas/editar/{id}")
+    public Persona editPersona(@PathVariable Long id,
+                               @RequestParam("nombre") String nuevoNombre,
+                               @RequestParam("apellido") String nuevoApellido,
+                               @RequestParam("img") String nuevoImg){
         Persona persona = ipersonaService.findPersona(id);
         
         persona.setNombre(nuevoNombre);
@@ -54,4 +54,10 @@ public class PersonaController {
         ipersonaService.savePersona(persona);
         return persona;
     }
+    
+    @GetMapping("personas/traer/perfil")
+    public Persona findPersona(){
+        return ipersonaService.findPersona((long)1);
+    }
+   
 }

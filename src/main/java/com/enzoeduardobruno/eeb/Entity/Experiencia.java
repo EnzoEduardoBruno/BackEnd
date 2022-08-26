@@ -11,7 +11,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Experiencia {
-        @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombreE;
@@ -52,4 +52,5 @@ public class Experiencia {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
+    
 }
