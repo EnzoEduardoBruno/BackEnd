@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.enzoeduardobruno.eeb.Entity;
 
 import javax.persistence.Entity;
@@ -15,6 +11,8 @@ public class Experiencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombreE;
+    private String timeE;
+    private String puestoE;
     private String descripcionE;
     
     //Constructores
@@ -22,8 +20,10 @@ public class Experiencia {
     public Experiencia() {
     }
 
-    public Experiencia(String nombreE, String descripcionE) {
+    public Experiencia(String nombreE, String timeE, String puestoE, String descripcionE) {
         this.nombreE = nombreE;
+        this.timeE = timeE;
+        this.puestoE = puestoE;
         this.descripcionE = descripcionE;
     }
     
@@ -45,6 +45,22 @@ public class Experiencia {
         this.nombreE = nombreE;
     }
 
+    public String getTimeE() {
+        return timeE;
+    }
+
+    public void setTimeE(String timeE) {
+        this.timeE = timeE;
+    }
+
+    public String getPuestoE() {
+        return puestoE;
+    }
+
+    public void setPuestoE(String puestoE) {
+        this.puestoE = puestoE;
+    }
+
     public String getDescripcionE() {
         return descripcionE;
     }
@@ -52,5 +68,5 @@ public class Experiencia {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
-    
+
 }
