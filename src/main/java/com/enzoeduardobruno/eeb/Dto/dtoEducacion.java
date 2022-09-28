@@ -10,16 +10,16 @@ public class dtoEducacion {
     @NotBlank
     private String nombreE;
     @NotBlank
-        @NotBlank
     private String timeE;
     @NotBlank
     private String tituloE;
+    @NotBlank
     private String descripcionE;
 
     public dtoEducacion() {
     }
 
-    public dtoEducacion(String nombreE, String descripcionE) {
+    public dtoEducacion(String nombreE, String timeE, String tituloE, String descripcionE) {
         this.nombreE = nombreE;
         this.timeE = timeE;
         this.tituloE = tituloE;
