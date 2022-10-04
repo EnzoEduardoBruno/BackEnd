@@ -5,7 +5,6 @@
  */
 package com.enzoeduardobruno.eeb.Security.Entity;
 
-import com.enzoeduardobruno.eeb.Security.Entity.Rol;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
